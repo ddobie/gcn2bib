@@ -73,7 +73,7 @@ def get_circular_data(circular):
     gcn_title = circular[2].replace('SUBJECT:','').strip()
     gcn_date = circular[3].replace('DATE:','').strip()
     
-    gcn_datetime = datetime.strptime(gcn_date.replace('GMT','').strip(), '%d/%m/%y %H:%M:%S')
+    gcn_datetime = datetime.strptime(gcn_date.replace('GMT','').strip(), '%y/%m/%d %H:%M:%S')
     
     gcn_author = get_author(circular[6])
     
@@ -128,7 +128,7 @@ def get_author(author_string):
 if __name__ == '__main__':
     event = 'S190814bv'
     
-    #download_event(event)
+    download_event(event)
     make_bib(event)
     
     
