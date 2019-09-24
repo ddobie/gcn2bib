@@ -1,8 +1,7 @@
 import urllib.request
 from datetime import datetime
 
-bib_template = '''
-@ARTICLE{GCN%s,
+bib_template = '''@ARTICLE{GCN%s,
     title = {%s},
     author = {%s and others},
     journal = {GCN},
@@ -10,6 +9,7 @@ bib_template = '''
     pages = {1-+},
     year = {%s}
 }
+
 '''
 
 def download_event(event):
@@ -65,6 +65,8 @@ def split_circulars(lines):
             circ_lines = []
         else:
             circ_lines.append(line)
+    
+    circular_list.append(circ_lines)
             
     return circular_list
     
